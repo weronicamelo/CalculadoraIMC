@@ -6,6 +6,7 @@ Aplicação console para cálculo do IMC.
 
 - Calcula o IMC
 - Informa a classificação do IMC
+- Informa qual é o peso que é preciso perder ou ganhar para estar no peso normal
 
 ## Tecnologias utilizadas
 
