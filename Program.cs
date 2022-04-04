@@ -19,6 +19,7 @@ namespace CalculadoraIMC
 
             Console.WriteLine("{0} sua altura é {1} e seu peso é {2}", nome, altura, peso);
             Console.WriteLine("Seu IMC é {0}", imc);
+            
             Console.WriteLine("Classificação do IMC:");
 
             if(imc < 18.5)
