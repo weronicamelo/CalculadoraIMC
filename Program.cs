@@ -6,58 +6,26 @@ namespace CalculadoraIMC
     {
         static void Main(string[] args)
         {
+            Individuo i1 = new Individuo();
+
             Console.WriteLine("Qual é o seu nome: ");
-            string nome = Console.ReadLine();
+            i1.Nome = Console.ReadLine();
 
             Console.WriteLine("Qual é a sua altura em metros? Ex: 1,65");
-            float altura = Convert.ToSingle(Console.ReadLine());
+            i1.Altura = Convert.ToSingle(Console.ReadLine());
 
             Console.WriteLine("Qual é o seu peso em Kg? Ex: 57,4");
-            float peso = Convert.ToSingle(Console.ReadLine());
+            i1.Peso = Convert.ToSingle(Console.ReadLine());
 
-            double imc = peso / (altura* altura);
-
-            Console.WriteLine("{0} sua altura é {1} e seu peso é {2}", nome, altura, peso);
-            Console.WriteLine("Seu IMC é {0}", imc);
+            Console.WriteLine("{0} sua altura é {1} e seu peso é {2}", i1.Nome, i1.Altura, i1.Peso);
+            Console.WriteLine("Seu IMC é {0}", i1.IMC);
             
-            Console.WriteLine("Classificação do IMC:");
+            Console.WriteLine("Classificação do IMC:", Math.Round(i1.IMC, 2));
+            
+            Console.WriteLine(i1.ClassificacaoImc);
+            Console.WriteLine(i1.PesoIdeal);
 
-            if(imc < 18.5)
-            {
-                Console.WriteLine("Abaixo do peso!");
-            }
-            else if(imc >= 18.5 && imc <= 24.9)
-            {
-                Console.WriteLine("Peso normal!");
-            }
-            else if(imc >= 25 && imc <= 29.9)
-            {
-                Console.WriteLine("Sobrepeso!");
-            }
-            else if(imc >= 30 && imc <= 34.9)
-            {
-                Console.WriteLine("Obesidade Grau 1!");
-            }
-            else if(imc >= 35 && imc <= 39.9)
-            {
-                Console.WriteLine("Obesidade Grau 2!");
-            }
-            else if(imc >= 40)
-            {
-                Console.WriteLine("Obesidade Grau 3 ou Mórbida!");
-            }
-
-            double pesoNovo;
-            if(imc < 18.5)
-            {
-                pesoNovo = (18.5 * altura * altura);
-                Console.WriteLine("Para chegar ao peso normal é preciso o ganho de {0} kg:", ((pesoNovo - peso) - 3));
-            }
-            else if(imc >= 25.0)
-            {
-                pesoNovo = (24.9 * altura * altura);
-                Console.WriteLine("Para chegar ao peso normal é preciso perder {0} kg:", ((peso - pesoNovo) - 3));
-            }
+            
         }
     }
 }
